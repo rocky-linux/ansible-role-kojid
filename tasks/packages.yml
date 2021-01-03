@@ -1,0 +1,6 @@
+---
+# Install packages
+- name: Install required packages
+  yum:
+    name: "{{ kojid_packages  }}"
+    state: present

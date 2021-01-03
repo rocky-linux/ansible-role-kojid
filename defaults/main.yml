@@ -1,2 +1,59 @@
 ---
-# ansible default variables - most variables live here
+# kojid
+kojid_packages:
+  - koji-builder
+  - koji-builder-plugins
+  - python3-koji
+  - python3-kickstart
+  - libvirt-client
+  - oz
+  - strace
+  - mock
+  - createrepo_c
+  - dnf-plugins-core
+  - gpgme
+  - pykickstart
+  - imagefactory
+  - imagefactory-plugins
+  - imagefactory-plugins-Docker
+  - imagefactory-plugins-GCE
+  - imagefactory-plugins-HyperV
+  - imagefactory-plugins-IndirectionCloud
+  - imagefactory-plugins-OVA
+  - imagefactory-plugins-RHEVM
+  - imagefactory-plugins-TinMan
+  - imagefactory-plugins-ovfcommon
+  - imagefactory-plugins-vSphere
+  - rng-tools
+
+kojid_vendor: Rocky
+kojid_packager: infrastructure@rockylinux.org
+kojid_distribution: Rocky
+kojid_web_url: https://koji.rockylinux.org/koji
+kojid_hub_url: https://koji.rockylinux.org/kojihub
+kojid_files_url: https://koji.rockylinux.org/kojifiles
+kojid_ca_bundle: /etc/pki/tls/certs/ca-bundle.crt
+
+kojid_maxjobs: 20
+kojid_minspace: 8192
+
+# NFS
+kojid_nfs: true
+kojid_mount: /mnt/koji
+kojid_nfs_path: nfs.rockylinux.org:/export/koji
+
+# Are we building images? This is definable in a playbook
+kojid_image_builder: false
+kojid_runroot_builder: false
+
+# Builtools repo
+# Not sure if we're using this yet
+kojid_buildtools_repo: False
+kojid_buildtools_repo_host: https://localhost
+kojid_buildtools_repo_url: "{{ kojid_buildtools_repo_host  }}/builder/$basearch/"
+kojid_buildtools_repo_gpgcheck: false
+kojid_buildtools_repo_gpgkey: RPM-GPG-KEY-Rocky-Infra
+
+# SSH Pubkeys, define them in a playbook
+# mockbuilder_pub_key
+# kojibuilder_pub_key
