@@ -1,7 +1,7 @@
 CI Badge
 
-# Ansible template role
-basic Role to use going forward because I forget pieces
+# Kojid Role
+This role prepares a system to be a koji builder. This requires kerberos keytabs.
 
 ## Getting started
 Ensure all dependencies are installed and then follow the below process
@@ -36,5 +36,3 @@ There are numerous other options within the [defaults/main.yml](./defaults/main.
 
 ## Changelog
 The [changelog](./CHANGELOG.md) is stored externally
-
-

@@ -12,3 +12,6 @@
 
 - name: Create the users for kojid
   import_tasks: users.yml
+
+- name: Configure kojid
+  import_tasks: config.yml

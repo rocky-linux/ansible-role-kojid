@@ -1,0 +1,30 @@
+---
+# kojid configuration
+
+# oz
+- name: OZ Config
+  template:
+    src: oz.cfg.j2
+    dest: /etc/oz/oz.cfg
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_kojid
+
+- name: runroot config
+  template:
+    src: runroot.conf.j2
+    dest: /etc/kojid/plugins/runroot.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_kojid
+
+- name: Configure kojid
+  template:
+    src: kojid.conf.j2
+    dest: /etc/kojid/kojid.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_kojid
