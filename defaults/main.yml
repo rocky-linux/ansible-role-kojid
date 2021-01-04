@@ -36,6 +36,7 @@ kojid_ca_bundle: /etc/pki/tls/certs/ca-bundle.crt
 kojid_keytab: /etc/kojid.keytab
 kojid_smtp_host: smtp.rockylinux.org
 kojid_allowed_scm: "git.centos.org:/* git.rockylinux.org:/*"
+kojid_bugzilla: https://bugs.rockylinux.org
 
 kojid_maxjobs: 20
 kojid_minspace: 8192

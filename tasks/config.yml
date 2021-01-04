@@ -1,7 +1,25 @@
 ---
 # kojid configuration
 
-# oz
+# sysctl and limits
+- name: set highmem_is_dirtyable on armv7 builders if applicable
+  sysctl:
+    name: vm.highmem_is_dirtyable
+    value: 1
+    state: present
+    sysctl_set: true
+    reload: true
+  when: ansible_architecture == 'armv7l'
+
+- name: Set nofile limit to 4096
+  copy:
+    src: 00-limit.conf
+    dest: /etc/security/limits.d/00-limit.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+# oz and plugins
 - name: OZ Config
   template:
     src: oz.cfg.j2
@@ -20,6 +38,16 @@
     mode: '0644'
   notify: restart_kojid
 
+# kojid base configuration
+- name: Configure koji.conf
+  template:
+    src: koji.conf.j2
+    dest: /etc/koji.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_kojid
+
 - name: Configure kojid
   template:
     src: kojid.conf.j2
@@ -28,3 +56,15 @@
     group: root
     mode: '0644'
   notify: restart_kojid
+
+# systemd override
+- name: Override kojid.service
+  copy:
+    src: kojid.service
+    dest: /etc/systemd/system/kojid.service
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - reload_systemd
+    - restart_kojid
