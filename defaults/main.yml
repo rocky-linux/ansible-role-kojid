@@ -44,7 +44,7 @@ kojid_maxjobs: 20
 kojid_minspace: 8192
 
 # NFS
-kojid_nfs: true
+kojid_nfs: false
 kojid_mount: /mnt/koji
 kojid_nfs_path: nfs.rockylinux.org:/export/koji
 
