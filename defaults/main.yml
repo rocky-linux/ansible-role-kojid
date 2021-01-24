@@ -35,6 +35,8 @@ kojid_files_url: https://koji.rockylinux.org/kojifiles
 kojid_ca_bundle: /etc/pki/tls/certs/ca-bundle.crt
 kojid_keytab: /etc/kojid.keytab
 kojid_smtp_host: smtp.rockylinux.org
+kojid_smtp_user: smtpuser
+kojid_smtp_pass: smtppass
 kojid_allowed_scm: "git.centos.org:/* git.rockylinux.org:/*"
 kojid_bugzilla: https://bugs.rockylinux.org
 
