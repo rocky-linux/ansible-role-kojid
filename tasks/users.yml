@@ -36,7 +36,7 @@
   authorized_key:
     user: mockbuilder
     key: "{{ mockbuilder_pub_key }}"
-  when: mockbuilder_pub_key
+  when: mockbuilder_pub_key is defined
 
 - name: kojibuilder user
   user:
@@ -47,7 +47,7 @@
   authorized_key:
     user: kojibuilder
     key: "{{ kojibuilder_pub_key }}"
-  when: kojibuilder_pub_key
+  when: kojibuilder_pub_key is defined
 
 # We need the apache user for NFS
 - name: apache group

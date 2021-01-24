@@ -14,4 +14,4 @@
     src: "{{ kojid_nfs_path }}"
     fstype: nfs
     state: mounted
-  when: koji_nfs
+  when: kojid_nfs|bool

@@ -10,8 +10,5 @@
 - name: Create the users for kojid
   import_tasks: users.yml
 
-- name: Ensure Storage is ready
-  import_tasks: storage.yml
-
 - name: Configure kojid
   import_tasks: config.yml
