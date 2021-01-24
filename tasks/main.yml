@@ -7,11 +7,11 @@
 - name: Apply required SELinux booleans
   import_tasks: selinux_boolean.yml
 
-- name: Ensure Storage is ready
-  import_tasks: storage.yml
-
 - name: Create the users for kojid
   import_tasks: users.yml
+
+- name: Ensure Storage is ready
+  import_tasks: storage.yml
 
 - name: Configure kojid
   import_tasks: config.yml
