@@ -40,8 +40,8 @@ kojid_smtp_pass: smtppass
 kojid_allowed_scm: "git.centos.org:/* git.rockylinux.org:/*"
 kojid_bugzilla: https://bugs.rockylinux.org
 
-kojid_maxjobs: 20
-kojid_minspace: 8192
+kojid_maxjobs: 10
+kojid_minspace: 4096
 
 # NFS
 kojid_nfs: false
