@@ -63,3 +63,8 @@ kojid_buildtools_repo_gpgkey: RPM-GPG-KEY-Rocky-Infra
 # SSH Pubkeys, define them in a playbook
 # mockbuilder_pub_key
 # kojibuilder_pub_key
+
+# Are the kojid builders "shared" builders between different ecosystems
+# "production" and "staging" are the predetermined names and are sorted
+# as such.
+kojid_shared_builders: false
