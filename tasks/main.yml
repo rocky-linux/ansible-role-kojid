@@ -12,8 +12,8 @@
 
 - name: Configure kojid
   import_tasks: config.yml
-  when: not kojid_shared_builders
+  when: not kojid_shared_builders | bool
 
 - name: Configure shared kojid
   import_tasks: shared/config_shared.yml
-  when: kojid_shared_builders
+  when: kojid_shared_builders | bool

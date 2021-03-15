@@ -49,8 +49,8 @@ kojid_mount: /mnt/koji
 kojid_nfs_path: nfs.rockylinux.org:/export/koji
 
 # Are we building images? This is definable in a playbook
-kojid_image_builder: false
-kojid_runroot_builder: false
+kojid_image_builder: true
+kojid_runroot_builder: true
 
 # Builtools repo
 # Not sure if we're using this yet
