@@ -37,7 +37,7 @@ kojid_keytab: /etc/kojid.keytab
 kojid_smtp_host: smtp.rockylinux.org
 kojid_smtp_user: smtpuser
 kojid_smtp_pass: smtppass
-kojid_allowed_scm: "git.rockylinux.org:/staging/rpms/*:off:/var/srpmproc/srpmproc_wrapper,git.rockylinux.org:/rocky/*:off:/var/srpmproc/srpmproc_wrapper"
+kojid_allowed_scm: "git.rockylinux.org:/staging/rpms/*:off:/var/srpmproc/srpmproc_wrapper git.rockylinux.org:/rocky/*:off:/var/srpmproc/srpmproc_wrapper"
 kojid_bugzilla: https://bugs.rockylinux.org
 
 kojid_maxjobs: 10
