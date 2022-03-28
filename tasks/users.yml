@@ -28,37 +28,37 @@
 #     group: mock
 
 - name: mockbuilder user
-  user:
+  ansible.builtin.user:
     name: mockbuilder
     groups: mock
 
 - name: mockbuilder ssh key
-  authorized_key:
+  ansible.posix.authorized_key:
     user: mockbuilder
     key: "{{ mockbuilder_pub_key }}"
   when: mockbuilder_pub_key is defined
 
 - name: kojibuilder user
-  user:
+  ansible.builtin.user:
     name: kojibuilder
     groups: mock
 
 - name: kojibuilder ssh key
-  authorized_key:
+  ansible.posix.authorized_key:
     user: kojibuilder
     key: "{{ kojibuilder_pub_key }}"
   when: kojibuilder_pub_key is defined
 
 # We need the apache user for NFS
 - name: apache group
-  group:
+  ansible.builtin.group:
     name: apache
     gid: 48
     system: true
     state: present
 
 - name: apache user
-  user:
+  ansible.builtin.user:
     name: apache
     uid: 48
     createhome: false

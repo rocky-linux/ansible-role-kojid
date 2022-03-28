@@ -3,7 +3,7 @@
 
 # sysctl and limits
 - name: set highmem_is_dirtyable on armv7 builders if applicable
-  sysctl:
+  ansible.builtin.sysctl:
     name: vm.highmem_is_dirtyable
     value: 1
     state: present
@@ -12,7 +12,7 @@
   when: ansible_architecture == 'armv7l'
 
 - name: Set nofile limit to 4096
-  copy:
+  ansible.builtin.copy:
     src: 00-limit.conf
     dest: /etc/security/limits.d/00-limit.conf
     owner: root
@@ -21,7 +21,7 @@
 
 # oz and plugins
 - name: OZ Config
-  template:
+  ansible.builtin.template:
     src: oz.cfg.j2
     dest: /etc/oz/oz.cfg
     owner: root
@@ -30,7 +30,7 @@
   notify: restart_kojid
 
 - name: runroot config
-  template:
+  ansible.builtin.template:
     src: runroot.conf.j2
     dest: /etc/kojid/plugins/runroot.conf
     owner: root
@@ -40,7 +40,7 @@
 
 # kojid base configuration
 - name: Configure koji.conf
-  template:
+  ansible.builtin.template:
     src: koji.conf.j2
     dest: /etc/koji.conf
     owner: root
@@ -49,7 +49,7 @@
   notify: restart_kojid
 
 - name: Configure kojid
-  template:
+  ansible.builtin.template:
     src: kojid.conf.j2
     dest: /etc/kojid/kojid.conf
     owner: root
@@ -59,7 +59,7 @@
 
 # systemd override
 - name: Override kojid.service
-  copy:
+  ansible.builtin.copy:
     src: kojid.service
     dest: /etc/systemd/system/kojid.service
     owner: root
