@@ -68,3 +68,7 @@ kojid_buildtools_repo_gpgkey: RPM-GPG-KEY-Rocky-Infra
 # "production" and "staging" are the predetermined names and are sorted
 # as such.
 kojid_shared_builders: false
+
+# Define ulimits to avoid alloc issues
+kojid_ulimits_conf: false
+kojid_ulimits_nofiles: 10240

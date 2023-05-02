@@ -13,5 +13,10 @@ ExecStart=/usr/sbin/kojid \
        --verbose
 ExecReload=/bin/kill -USR1 $MAINPID
 
+{% if kojid_ulimits_conf %}
+LimitNOFILE={{ kojid_ulimits_nofiles }}
+LimitNOFILESoft={{ kojid_ulimits_nofiles }}
+{% endif %}
+
 [Install]
 WantedBy=multi-user.target

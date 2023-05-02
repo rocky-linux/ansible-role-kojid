@@ -11,9 +11,9 @@
     reload: true
   when: ansible_architecture == 'armv7l'
 
-- name: Set nofile limit to 4096
-  ansible.builtin.copy:
-    src: 00-limit.conf
+- name: Set nofile limit to 10240
+  ansible.builtin.template:
+    template: 00-limit.conf.j2
     dest: /etc/security/limits.d/00-limit.conf
     owner: root
     group: root
@@ -59,8 +59,8 @@
 
 # systemd override
 - name: Override kojid.service
-  ansible.builtin.copy:
-    src: kojid.service
+  ansible.builtin.template:
+    template: kojid.service.j2
     dest: /etc/systemd/system/kojid.service
     owner: root
     group: root
