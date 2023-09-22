@@ -6,24 +6,12 @@ kojid_packages:
   - python3-koji
   - python3-kickstart
   - libvirt-client
-  - oz
   - strace
   - mock
   - createrepo_c
   - dnf-plugins-core
   - gpgme
   - pykickstart
-  - imagefactory
-  - imagefactory-plugins
-  - imagefactory-plugins-Docker
-  - imagefactory-plugins-GCE
-  - imagefactory-plugins-HyperV
-  - imagefactory-plugins-IndirectionCloud
-  - imagefactory-plugins-OVA
-  - imagefactory-plugins-RHEVM
-  - imagefactory-plugins-TinMan
-  - imagefactory-plugins-ovfcommon
-  - imagefactory-plugins-vSphere
   - rng-tools
 
 kojid_vendor: Rocky
