@@ -26,6 +26,17 @@ kojid_smtp_host: smtp.rockylinux.org
 kojid_smtp_user: smtpuser
 kojid_smtp_pass: smtppass
 kojid_allowed_scm: "git.rockylinux.org:/staging/rpms/*:off:/var/srpmproc/srpmproc_wrapper git.rockylinux.org:/rocky/*:off:/var/srpmproc/srpmproc_wrapper"
+kojid_allowed_scm_list:
+  - git.rockylinux.org:/staging/rpms/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/staging/src/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/staging/sig/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/staging/src/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/staging/src-rhel/rpms/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/src/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/src-rpms/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.rockylinux.org:/rpms/*:off:/var/srpmproc/srpmproc_wrapper
+  - git.resf.org:/sig_core/*:off
+
 kojid_bugzilla: https://bugs.rockylinux.org
 
 kojid_maxjobs: 10
