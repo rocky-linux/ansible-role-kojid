@@ -3,5 +3,5 @@
 kojibuilder soft nofile {{ kojid_ulimits_nofiles }}
 kojibuilder hard nofile {{ kojid_ulimits_nofiles }}
 {% else %}
-*         -      nofile 4096
+*         -      nofile 10240
 {% endif %}

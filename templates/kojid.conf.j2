@@ -22,7 +22,11 @@ keytab = {{ kojid_keytab }}
 serverca = {{ kojid_ca_bundle }}
 
 ; Modify
-allowed_scms = {{ kojid_allowed_scm_list|join(" ") }}
+; allowed_scms = {{ kojid_allowed_scm_list|join(" ") }}
+
+# everything is done at the hub now
+allowed_scms_use_config = false
+allowed_scms_use_policy = true
 
 ; Other settings
 build_arch_can_fail = true
@@ -32,5 +36,9 @@ build_arch_can_fail = true
 {% if kojid_runroot_builder %}
 {{ plugins.append("runroot") }}
 {% endif %}
+
+{{ plugins.append("kiwi") }}
+
+{{ plugins.append("image_builder") }}
 
 plugins = {{ plugins | join(" ") }}

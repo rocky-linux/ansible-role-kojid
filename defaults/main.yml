@@ -3,9 +3,10 @@
 kojid_packages:
   - koji-builder
   - koji-builder-plugins
+  - koji-image-builder-builder
+  - koji-osbuild-builder
   - python3-koji
   - python3-kickstart
-  - libvirt-client
   - strace
   - mock
   - createrepo_c
@@ -13,10 +14,11 @@ kojid_packages:
   - gpgme
   - pykickstart
   - rng-tools
+  - python3-rpmautospec-koji
 
-kojid_vendor: Rocky
+kojid_vendor: Rocky Enterprise Software Foundation
 kojid_packager: releng@rockylinux.org
-kojid_distribution: Rocky
+kojid_distribution: Rocky Linux
 kojid_web_url: https://kojidev.rockylinux.org/koji
 kojid_hub_url: https://kojidev.rockylinux.org/kojihub
 kojid_files_url: https://kojidev.rockylinux.org/kojifiles
@@ -40,8 +42,8 @@ kojid_allowed_scm_list:
 
 kojid_bugzilla: https://bugs.rockylinux.org
 
-kojid_maxjobs: 10
-kojid_minspace: 4096
+kojid_maxjobs: 20
+kojid_minspace: 8192
 
 # NFS
 kojid_nfs: false
@@ -71,4 +73,4 @@ kojid_shared_builders: false
 
 # Define ulimits to avoid alloc issues
 kojid_ulimits_conf: false
-kojid_ulimits_nofiles: 10240
+kojid_ulimits_nofiles: 1000000

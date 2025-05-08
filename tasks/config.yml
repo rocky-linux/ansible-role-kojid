@@ -20,14 +20,14 @@
     mode: '0644'
 
 # oz and plugins
-- name: OZ Config
-  ansible.builtin.template:
-    src: oz.cfg.j2
-    dest: /etc/oz/oz.cfg
-    owner: root
-    group: root
-    mode: '0644'
-  notify: restart_kojid
+# - name: OZ Config
+#   ansible.builtin.template:
+#     src: oz.cfg.j2
+#     dest: /etc/oz/oz.cfg
+#     owner: root
+#     group: root
+#     mode: '0644'
+#   notify: restart_kojid
 
 - name: runroot config
   ansible.builtin.template:
@@ -58,13 +58,14 @@
   notify: restart_kojid
 
 # systemd override
-- name: Override kojid.service
+- name: Override kojid.service limits
   ansible.builtin.template:
-    template: kojid.service.j2
-    dest: /etc/systemd/system/kojid.service
+    template: kojid.ulimits.service.j2
+    dest: /etc/systemd/system/kojid.service.d/ulimits.conf
     owner: root
     group: root
     mode: '0644'
+  when: kojid_ulimits_conf
   notify:
     - reload_systemd
     - restart_kojid
