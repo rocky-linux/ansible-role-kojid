@@ -3,7 +3,7 @@
 ; They will be mounted during each run. It is suggested, that these
 ; paths has readonly options and are made writable via extra_mounts
 ; parameter for individual calls.
-default_mounts = /mnt/koji,/mnt/compose
+default_mounts = /mnt/koji
 
 ; comma-delimited list of safe roots.
 ; Each extra_mount need to start with some of these prefixes. Other paths are
@@ -19,8 +19,8 @@ safe_roots = /mnt
 
 ; mount origins, order is important here, ordered by best catch
 [path0]
-mountpoint = /mnt/compose
-path = /mnt/compose
+mountpoint = /mnt/koji/compose
+path = /mnt/koji/compose
 fstype = bind
 options = bind
 
