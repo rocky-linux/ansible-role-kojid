@@ -16,8 +16,8 @@ kojid_packages:
   - rng-tools
   - python3-rpmautospec-koji
 
-kojid_vendor: Rocky Enterprise Software Foundation
-kojid_packager: releng@rockylinux.org
+kojid_vendor: "Rocky Enterprise Software Foundation"
+kojid_packager: "Rocky Linux Build System <releng@rockylinux.org>"
 kojid_distribution: Rocky Linux
 kojid_web_url: https://kojidev.rockylinux.org/koji
 kojid_hub_url: https://kojidev.rockylinux.org/kojihub
