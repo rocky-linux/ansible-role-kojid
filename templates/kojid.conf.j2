@@ -6,6 +6,7 @@ topdir={{ kojid_mount }}
 workdir=/tmp/koji
 mockdir=/var/lib/mock
 mockuser=kojibuilder
+# Build tags will override the next three
 vendor={{ kojid_vendor }}
 packager={{ kojid_packager }}
 distribution={{ kojid_distribution }}
@@ -23,7 +24,8 @@ keytab = {{ kojid_keytab }}
 serverca = {{ kojid_ca_bundle }}
 
 ; Modify
-; allowed_scms = {{ kojid_allowed_scm_list|join(" ") }}
+# As everything is done at the hub now, this list is a formality
+# allowed_scms = {{ kojid_allowed_scm_list|join(" ") }}
 
 # everything is done at the hub now
 allowed_scms_use_config = false
