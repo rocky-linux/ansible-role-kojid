@@ -13,7 +13,7 @@
 
 - name: Set nofile limit to 10240
   ansible.builtin.template:
-    template: 00-limit.conf.j2
+    src: 00-limit.conf.j2
     dest: /etc/security/limits.d/00-limit.conf
     owner: root
     group: root
@@ -60,7 +60,7 @@
 # systemd override
 - name: Override kojid.service limits
   ansible.builtin.template:
-    template: kojid.ulimits.service.j2
+    src: kojid.ulimits.service.j2
     dest: /etc/systemd/system/kojid.service.d/ulimits.conf
     owner: root
     group: root
