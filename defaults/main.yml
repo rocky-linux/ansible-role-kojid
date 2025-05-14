@@ -45,6 +45,8 @@ kojid_bugzilla: https://bugs.rockylinux.org
 kojid_maxjobs: 20
 kojid_minspace: 8192
 
+kojid_disable_bootstrap_chroot: false
+
 # NFS
 kojid_nfs: false
 kojid_mount: /mnt/koji
@@ -56,7 +58,7 @@ kojid_runroot_builder: true
 
 # Builtools repo
 # Not sure if we're using this yet
-kojid_buildtools_repo: False
+kojid_buildtools_repo: false
 kojid_buildtools_repo_host: https://localhost
 kojid_buildtools_repo_url: "{{ kojid_buildtools_repo_host  }}/builder/$basearch/"
 kojid_buildtools_repo_gpgcheck: false
