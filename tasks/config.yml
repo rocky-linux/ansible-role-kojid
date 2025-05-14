@@ -66,6 +66,18 @@
     mode: '0644'
 
 # systemd override
+- name: Ensure override dir exists
+  ansible.builtin.file:
+    path: /etc/systemd/system/kojid.service.d
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  when: kojid_ulimits_conf
+  notify:
+    - reload_systemd
+    - restart_kojid
+
 - name: Override kojid.service limits
   ansible.builtin.template:
     src: kojid.ulimits.service.j2
