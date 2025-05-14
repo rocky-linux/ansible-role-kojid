@@ -73,6 +73,8 @@ kojid_buildtools_repo_gpgkey: RPM-GPG-KEY-Rocky-Infra
 # as such.
 kojid_shared_builders: false
 
+kojid_is_runroot: false
+
 # Define ulimits to avoid alloc issues
 kojid_ulimits_conf: false
 kojid_ulimits_memlock: 1000000
