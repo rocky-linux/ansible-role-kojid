@@ -57,6 +57,14 @@
     mode: '0644'
   notify: restart_kojid
 
+- name: Configure site defaults
+  ansible.builtin.template:
+    src: site-defaults.cfg
+    dest: /etc/mock/site-defaults.cfg
+    owner: root
+    group: mock
+    mode: '0644'
+
 # systemd override
 - name: Override kojid.service limits
   ansible.builtin.template:
