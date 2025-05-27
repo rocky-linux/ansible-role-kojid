@@ -30,6 +30,6 @@
     - kojid-kiwi-support.if
 
 - name: "Reload selinux files"
-  ansible.builtin.shell: /usr/sbin/semodule -i "/root/selinux/kojid-kiwi-support.mod"
+  ansible.builtin.shell: "/usr/sbin/semodule -i /root/selinux/kojid-kiwi-support.pp"
   when: ansible_selinux.status == "enabled" and sepolicy.changed
 ...
