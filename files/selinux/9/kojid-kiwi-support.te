@@ -1,0 +1,9 @@
+module kojid-kiwi-support 1.0;
+
+require {
+	type unconfined_service_t;
+	class capability2 mac_admin;
+}
+
+#============= unconfined_service_t ==============
+allow unconfined_service_t self:capability2 mac_admin;
