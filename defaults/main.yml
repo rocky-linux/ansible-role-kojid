@@ -15,6 +15,7 @@ kojid_packages:
   - pykickstart
   - rng-tools
   - python3-rpmautospec-koji
+  - isomd5sum
 
 kojid_vendor: "Rocky Enterprise Software Foundation"
 kojid_packager: "Rocky Linux Build System <releng@rockylinux.org>"
