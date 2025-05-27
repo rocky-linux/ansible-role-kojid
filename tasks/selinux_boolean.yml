@@ -24,6 +24,10 @@
   register: sepolicy
   with_items:
     - kojid-kiwi-support.pp
+    - kojid-kiwi-support.mod
+    - kojid-kiwi-support.te
+    - kojid-kiwi-support.fc
+    - kojid-kiwi-support.if
 
 - name: "Reload selinux files"
   ansible.builtin.shell: /usr/sbin/semodule -i "/root/selinux/kojid-kiwi-support.mod"
