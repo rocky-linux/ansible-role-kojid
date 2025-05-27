@@ -11,6 +11,12 @@
     - allow_httpd_anon_write
     - httpd_use_nfs
 
+- name: "Ensure /root/selinux directory exists"
+  ansible.builtin.file:
+    path: /root/selinux
+    state: directory
+    mode: '0755'
+
 - name: "Copy selinux policy"
   ansible.builtin.copy:
     src: "selinux/{{ ansible_distribution_version[0] }}/{{ item }}"
