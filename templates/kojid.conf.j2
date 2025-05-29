@@ -1,6 +1,10 @@
 [kojid]
 sleeptime=15
+{% if ansible_architecture == "s390x" %}
+maxjobs=1
+{% else %}
 maxjobs={{ kojid_maxjobs }}
+{% endif %}
 minspace={{ kojid_minspace }}
 topdir={{ kojid_mount }}
 workdir=/tmp/koji
