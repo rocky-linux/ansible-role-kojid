@@ -1,9 +1,16 @@
+
 module kojid-kiwi-support 1.0;
 
 require {
+	type sysfs_t;
 	type unconfined_service_t;
+	type tracefs_t;
+	class filesystem associate;
 	class capability2 mac_admin;
 }
+
+#============= tracefs_t ==============
+allow tracefs_t sysfs_t:filesystem associate;
 
 #============= unconfined_service_t ==============
 allow unconfined_service_t self:capability2 mac_admin;
