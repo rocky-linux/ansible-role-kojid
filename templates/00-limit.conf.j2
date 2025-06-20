@@ -2,8 +2,8 @@
 {% if kojid_ulimits_conf %}
 kojibuilder soft memlock {{ kojid_ulimits_memlock }}
 kojibuilder hard memlock {{ kojid_ulimits_memlock }}
-kojibuilder soft nofiles {{ kojid_ulimits_nofiles }}
-kojibuilder hard nofiles {{ kojid_ulimits_nofiles }}
+kojibuilder soft nofile  {{ kojid_ulimits_nofiles }}
+kojibuilder hard nofile  {{ kojid_ulimits_nofiles }}
 {% else %}
 *         -      nofile 10240
 {% endif %}
