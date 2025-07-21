@@ -1,0 +1,11 @@
+
+module kojid-execmod-support 1.0;
+
+require {
+        type unconfined_service_t;
+        type mock_var_lib_t;
+        class file execmod;
+}
+
+#============= unconfined_service_t ==============
+allow unconfined_service_t mock_var_lib_t:file execmod;
